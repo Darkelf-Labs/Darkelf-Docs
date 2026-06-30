@@ -20,9 +20,8 @@ Darkelf is not a single browser — it is a **unified system**:
 
 ### 🌐 Browser Variants
 
-* ⚡ **Quantum** - (Public Archive) PQ Chaining enahancements now merged in Darkelf Shadow CE.
 * 🔴 **RedSec** — Security-focused / stealth environment - Enterprise 
-* 🌑 **Shadow CE** — Hardened general-purpose build v5.0.9 Latest via Pip 
+* 🌑 **Shadow CE** — Hardened general-purpose build v5.0.9 Latest via Pip
 * 🍫 **Cocoa** — Native macOS stable browser
 
 ### 🧰 CLI & Tooling
@@ -88,7 +87,6 @@ Python • PySide6 • PyObjC • WebKit • HTML/CSS • Ollama • Tor • Pos
 
 ### 🌐 Browser System
 
-* ⚡ [Darkelf Quantum](https://github.com/Darkelf2024/Darkelf-Quantum) — Public Archive!
 * 🔴 [Darkelf RedSec](#) — Security-focused stealth build *(Private / Revised)*
 * 🌑 [Darkelf Shadow](https://github.com/Darkelf2024/Darkelf-Shadow) — Hardened general-purpose *(Revised)*
 * 🍫 [Darkelf Cocoa](https://github.com/Darkelf2024/Darkelf-Cocoa-Browser) — macOS native stable build
