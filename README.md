@@ -1,139 +1,208 @@
-# 🧩 Darkelf Browser — Ultimate Privacy, Zero Trace
+# 🧩 Darkelf — Privacy, Security & Research Ecosystem
 
-**Enhanced Security | Post-Quantum Ready | Anonymous Research | Zero Trace**
+**Privacy by Design | Security Research | AI-Assisted Analysis | Post-Quantum Ready**
 
-Darkelf is a modular ecosystem of **privacy-first browsers and security tools** designed for **cybersecurity research, digital forensics, and post-quantum integrity validation**.
+Darkelf is an open ecosystem of **privacy-focused browsers, security tools, OSINT utilities, and research projects** designed for cybersecurity professionals, researchers, developers, and privacy-conscious users.
 
-🌐 [Website](https://darkelfbrowser.com) • 🧠 [Docs & Guides](https://github.com/Darkelf2024/Darkelf-Browser)
-
----
-
-## 🧭 Ecosystem Overview
-
-Darkelf is not a single browser — it is a **unified system**:
-
-### 🌐 Browser Variants
-
-* 🔴 **RedSec** — Security-focused / stealth environment - Enterprise 
-* 🌑 **Shadow CE** — Hardened general-purpose build v7.0.3Latest via MacOS/Pip - Linux/Wndows Release in Future!
-* 🍫 **Cocoa** — Native macOS 
-
-### 🧰 CLI & Tooling
-
-* **Darkelf-CLI-Tools** — Secure scripts, Tor utilities, wipers
-* **Darkelf-OSINT-AI** — OSINT automation and intelligence tools
-* **Darkelf Retro CLI Hub** — Legacy and experimental utilities
-
-### 🧠 Core System
-
-* **Browser Hub (this repo)** — Docs, architecture, guides
-* **PQC Engine / Mini Engine** — Post-quantum integrity layer *(in development)*
-* **Web Platform** — Docs, site, ecosystem access
+🌐 **Website:** https://darkelfbrowser.com  
+📚 **Documentation:** https://github.com/Darkelf-Labs/Darkelf-Docs
 
 ---
 
-## 🔑 Core Principles
+# 🧭 Ecosystem Overview
 
-* **Ephemeral Execution** — No persistent browsing data
-* **Isolation by Default** — Tab and domain separation
-* **On-Device Detection** — No telemetry, no external calls
-* **Minimal Attack Surface** — Reduced complexity and exposure
-* **Passive Integrity** — Monitoring without modifying traffic
+Darkelf is not a single browser—it is a unified ecosystem of privacy, security, and research software.
 
-> Privacy should be enforced by architecture — not user configuration.
+## 🌐 Privacy Browser Suite
 
----
+### 🔴 Darkelf RedSec
+Enterprise-grade hardened browser designed for advanced security environments.
 
-## 🔒 Key Capabilities
+### 🌑 Darkelf Shadow CE
+Cross-platform privacy browser built with QtWebEngine.
 
-### 🕵️ Privacy & Anti-Tracking
+**Current Stable:** v7.0.3
 
-* Memory-only sessions (no cookies, cache, or history)
-* Tracker and telemetry blocking
-* Anti-fingerprinting detection
+Available for:
 
-### 🧠 MiniAI Sentinel (Local IDS)
+- macOS
+- PyPI
+- Linux *(coming soon)*
+- Windows *(coming soon)*
 
-* Detects tracking attempts and suspicious behavior
-* Identifies automation and scanning patterns
-* Runs fully local (no telemetry)
+### 🍫 Darkelf Cocoa
 
-### 🧬 Integrity Layer (PQC-Oriented)
-
-* SHA3-512 request fingerprinting
-* Session integrity chain validation
-* TLS trust consistency monitoring (TOFU)
-
-### 🧯 Threat Response
-
-* Automatic session lockdown on anomaly detection
-* Controlled recovery after stabilization
+Native macOS privacy browser built with WebKit and PyObjC.
 
 ---
 
-## 🧰 Tech Stack
+## 🧰 CLI & Research Tools
 
-Python • PySide6 • PyObjC • WebKit • HTML/CSS • Ollama • Tor • Post-Quantum Cryptography
-
----
-
-## 📂 Repositories
-
-### 🌐 Browser System
-
-* 🔴 [Darkelf RedSec](#) — Security-focused stealth build *(Private / Revised)*
-* 🌑 [Darkelf Shadow](https://github.com/Darkelf2024/Darkelf-Shadow) — Hardened general-purpose *(Revised)*
-* 🍫 [Darkelf Cocoa](https://github.com/Darkelf2024/Darkelf-Cocoa-Browser) — macOS native stable build
+- **Darkelf CLI Tools** — Security scripts, Tor utilities, secure automation
+- **Darkelf OSINT AI** — AI-assisted OSINT and intelligence workflows
+- **Darkelf CLI Research Suite** — Experimental research and testing tools
+- **Darkelf OSINT Toolkit Lite** — Lightweight reconnaissance utilities
+- **Darkelf Retro CLI Hub** — Legacy utilities and archived tooling
 
 ---
 
-### 🧰 CLI & Tools
+## 🧠 Core Platform
 
-* 🧰 [Darkelf CLI Tools](https://github.com/Darkelf2024/Darkelf-CLI-Tools) — Secure scripts, Tor utilities, wipers
-* 🤖 [Darkelf OSINT AI](https://github.com/Darkelf2024/Darkelf-OSINT-Ai) — OSINT automation and intelligence
-* 🧪 [Darkelf CLI Research Suite](https://github.com/Darkelf2024/Darkelf-CLI-Research-Suite) — Advanced research, testing, and experimental tooling
-* 🔎 [Darkelf OSINT Toolkit Lite](https://github.com/Darkelf2024/Darkelf-OSINT-Toolkit-Lite) — Lightweight OSINT utilities and quick analysis tools
-* 🕹️ [Darkelf Retro CLI Hub](https://github.com/Darkelf2024/Darkelf-Retro-CLI-Hub) — Legacy and experimental tools
-
----
-
-### 🌍 Platform
-
-* 🌐 [Website](https://darkelfbrowser.com)
-* 🧠 [Docs & Guides](https://github.com/Darkelf2024/Darkelf-Browser)
+- **Darkelf Docs** — Documentation, architecture, tutorials, and guides
+- **Darkelf Website** — Central project portal
+- **MiniAI Sentinel** — Local AI-assisted threat detection
+- **PQC Integrity Engine** *(In Development)* — Post-quantum integrity validation
 
 ---
 
-## ⚠️ Usage Notice
+# 🔑 Design Principles
+
+Darkelf is built around several core principles:
+
+- **Privacy by Design**
+- **Ephemeral Execution**
+- **Isolation by Default**
+- **Local AI Processing**
+- **Minimal Attack Surface**
+- **Passive Integrity Validation**
+- **No Telemetry**
+
+> Privacy should be enforced by architecture—not by user configuration.
+
+---
+
+# 🔒 Key Capabilities
+
+## 🕵️ Privacy Protection
+
+- Memory-only browsing sessions
+- No browsing history
+- No persistent cookies
+- No disk cache
+- Tracker blocking
+- Telemetry blocking
+- Anti-fingerprinting protections
+
+---
+
+## 🧠 MiniAI Sentinel
+
+Local AI-assisted security engine capable of:
+
+- Detecting tracking attempts
+- Identifying suspicious behavior
+- Detecting automation and scanning activity
+- Monitoring browser integrity
+
+Runs entirely on-device with no cloud processing.
+
+---
+
+## 🧬 Integrity Layer
+
+Research-focused integrity mechanisms including:
+
+- SHA3-512 request fingerprinting
+- Session integrity chain validation
+- Trust-On-First-Use (TOFU) TLS consistency monitoring
+- Post-Quantum integrity research
+
+---
+
+## 🧯 Threat Response
+
+When suspicious activity is detected, Darkelf can:
+
+- Lock down the browsing session
+- Isolate active threats
+- Recover automatically after stabilization
+
+---
+
+# 🧰 Technology Stack
+
+- Python
+- PySide6
+- QtWebEngine
+- PyObjC
+- WebKit
+- HTML/CSS
+- Ollama
+- Tor
+- Post-Quantum Cryptography (Research)
+
+---
+
+# 📂 Projects
+
+## 🌐 Privacy Browsers
+
+- 🔴 Darkelf RedSec *(Enterprise)*
+- 🌑 Darkelf Shadow CE
+- 🍫 Darkelf Cocoa
+
+---
+
+## 🧰 Security Tools
+
+- Darkelf CLI Tools
+- Darkelf OSINT AI
+- Darkelf CLI Research Suite
+- Darkelf OSINT Toolkit Lite
+- Darkelf Retro CLI Hub
+
+---
+
+## 🌍 Platform
+
+- Website
+- Documentation
+- Guides
+- Tutorials
+- Architecture
+- Release Notes
+
+---
+
+# ⚠️ Intended Use
 
 Darkelf is intended for:
 
-* Cybersecurity research
-* Digital forensics
-* Educational and academic use
+- Cybersecurity research
+- Digital forensics
+- Security testing
+- Privacy research
+- Education
+- Academic study
 
-It is **not a general-purpose browser** and may trigger security tools due to its behavior.
+It is **not intended to replace mainstream web browsers** and may trigger security software due to its privacy-oriented behavior.
 
-Users are responsible for compliance with local laws and regulations.
-
----
-
-## ⚖️ License
-
-* Docs — LGPL-3.0-or-later
-* PySide6 Builds — LGPL-3.0-or-later
-* CLI Tools — LGPL-3.0-or-later
+Users are responsible for complying with all applicable laws and regulations.
 
 ---
 
-## 🌟 Summary
+# ⚖️ Licensing
 
-Darkelf delivers:
+Unless otherwise noted:
 
-* Ephemeral browsing
-* On-device threat detection
-* Post-quantum integrity validation
+- Documentation — LGPL-3.0-or-later
+- Browser Projects — LGPL-3.0-or-later
+- CLI Tools — LGPL-3.0-or-later
 
-Designed for advanced users who require privacy, control, and minimal forensic footprint.
+Individual repositories may contain additional licensing information.
 
-**Browse securely. Detect anomalies. Leave no trace.**
+---
+
+# 🌟 Vision
+
+Darkelf is dedicated to advancing privacy, security, and open research through transparent, community-driven development.
+
+Our ecosystem focuses on:
+
+- Privacy-first browsing
+- Local AI-assisted analysis
+- Security research
+- Open-source collaboration
+- Post-quantum readiness
+
+**Protect Privacy. Advance Security. Enable Research.**
