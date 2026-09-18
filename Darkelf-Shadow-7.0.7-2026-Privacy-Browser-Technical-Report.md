@@ -44,38 +44,17 @@ practical exception.
 
 ## 1. Architecture
 
-  ----------------------------------------------------------------------------
-  Area                  Darkelf Shadow    Brave             LibreWolf
-                        7.0.7                               
-  --------------------- ----------------- ----------------- ------------------
-  Browser foundation    QtWebEngine /     Chromium fork     Firefox fork
-                        Chromium                            
+| Area | Darkelf Shadow 7.0.7 | Brave | LibreWolf |
+|---|---|---|---|
+| **Browser foundation** | QtWebEngine / Chromium | Chromium fork | Firefox fork |
+| **Primary philosophy** | Ephemeral privacy + adaptive compatibility | Mainstream browsing + integrated privacy | Hardened Firefox privacy |
+| **Built-in network filtering** | Yes — Darkelf Standard Protection | Yes — Brave Shields | uBlock Origin + Firefox protections |
+| **Anti-fingerprinting** | Canvas and browser-surface protections | API randomization and other protections | Firefox Resist Fingerprinting |
+| **Persistent browsing** | Intentionally minimized | Full conventional browser | Available but privacy-hardened |
+| **Extension ecosystem** | Limited | Chromium extensions | Firefox extensions |
+| **Project maturity** | Independent / experimental | Large mature project | Established community project |
 
-  Primary philosophy    Ephemeral         Mainstream        Hardened Firefox
-                        privacy +         browsing +        privacy
-                        adaptive          integrated        
-                        compatibility     privacy           
-
-  Built-in network      Yes               Yes --- Brave     uBlock Origin +
-  filtering                               Shields           Firefox
-                                                            protections
-
-  Anti-fingerprinting   Canvas and        API randomization Firefox Resist
-                        browser-surface   and other         Fingerprinting
-                        protections       protections       
-
-  Persistent browsing   Intentionally     Full conventional Available but
-                        minimized         browser           privacy-hardened
-
-  Extension ecosystem   Limited           Chromium          Firefox extensions
-                                          extensions        
-
-  Project maturity      Independent /     Large mature      Established
-                        experimental      project           community project
-  ----------------------------------------------------------------------------
-
-These architectural differences are important. Shadow is not intended to
-be a direct clone of either Brave or LibreWolf.
+These architectural differences are important. Shadow is not intended to be a direct clone of either Brave or LibreWolf.
 
 ------------------------------------------------------------------------
 
