@@ -1,8 +1,8 @@
-# Darkelf Shadow 7.0.7 --- 2026 Privacy Browser Technical Report
+# Darkelf Shadow 7.0.8 --- 2026 Privacy Browser Technical Report
 
 ## Darkelf Shadow vs. Brave vs. LibreWolf
 
-**Release:** Darkelf Shadow CE 7.0.7\
+**Release:** Darkelf Shadow CE 7.0.8\
 **Report Year:** 2026\
 **Focus:** Privacy architecture, anti-tracking, anti-fingerprinting,
 ephemeral browsing, compatibility, and project maturity
@@ -11,10 +11,15 @@ ephemeral browsing, compatibility, and project maturity
 
 ## Executive Summary
 
-Darkelf Shadow 7.0.7 represents a significant evolution of the Shadow
-privacy model. The release focuses not simply on increasing the number
-of blocked requests, but on balancing strong privacy defaults with
-modern website compatibility.
+Darkelf Shadow 7.0.8 builds on the compatibility work of 7.0.7 with a
+major refinement of Shadow's network-filtering path. The release adds
+fast declarative tracker blocking, indexed fallback evaluation, reduced
+request-path overhead, and tighter alignment between QtWebEngine canvas
+permissions and Darkelf's Blocked / Protected / Trusted policy.
+
+The objective is not simply to increase the number of blocked requests,
+but to preserve strong privacy defaults while improving responsiveness
+and modern website compatibility.
 
 Shadow takes a different architectural approach from two established
 privacy browsers, Brave and LibreWolf.
@@ -30,7 +35,7 @@ defaults.
 network filtering, canvas readback control, session isolation, and
 narrowly scoped compatibility exceptions.
 
-The defining principle behind Shadow 7.0.7 is:
+The defining principle behind Shadow 7.0.8 is:
 
 > **Protect by default. Relax only what is necessary. Keep trust
 > temporary.**
@@ -44,23 +49,46 @@ practical exception.
 
 ## 1. Architecture
 
-| Area | Darkelf Shadow 7.0.7 | Brave | LibreWolf |
-|---|---|---|---|
-| **Browser foundation** | QtWebEngine / Chromium | Chromium fork | Firefox fork |
-| **Primary philosophy** | Ephemeral privacy + adaptive compatibility | Mainstream browsing + integrated privacy | Hardened Firefox privacy |
-| **Built-in network filtering** | Yes — Darkelf Standard Protection | Yes — Brave Shields | uBlock Origin + Firefox protections |
-| **Anti-fingerprinting** | Canvas and browser-surface protections | API randomization and other protections | Firefox Resist Fingerprinting |
-| **Persistent browsing** | Intentionally minimized | Full conventional browser | Available but privacy-hardened |
-| **Extension ecosystem** | Limited | Chromium extensions | Firefox extensions |
-| **Project maturity** | Independent / experimental | Large mature project | Established community project |
+  --------------------------------------------------------------------------------
+  Area                      Darkelf Shadow    Brave             LibreWolf
+                            7.0.8                               
+  ------------------------- ----------------- ----------------- ------------------
+  **Browser foundation**    QtWebEngine /     Chromium fork     Firefox fork
+                            Chromium                            
 
-These architectural differences are important. Shadow is not intended to be a direct clone of either Brave or LibreWolf.
+  **Primary philosophy**    Ephemeral         Mainstream        Hardened Firefox
+                            privacy +         browsing +        privacy
+                            adaptive          integrated        
+                            compatibility     privacy           
+
+  **Built-in network        Yes ---           Yes --- Brave     uBlock Origin +
+  filtering**               declarative       Shields           Firefox
+                            tracker layer +                     protections
+                            Darkelf Standard                    
+                            Protection                          
+
+  **Anti-fingerprinting**   Canvas and        API randomization Firefox Resist
+                            browser-surface   and other         Fingerprinting
+                            protections       protections       
+
+  **Persistent browsing**   Intentionally     Full conventional Available but
+                            minimized         browser           privacy-hardened
+
+  **Extension ecosystem**   Limited           Chromium          Firefox extensions
+                                              extensions        
+
+  **Project maturity**      Independent /     Large mature      Established
+                            experimental      project           community project
+  --------------------------------------------------------------------------------
+
+These architectural differences are important. Shadow is not intended to
+be a direct clone of either Brave or LibreWolf.
 
 ------------------------------------------------------------------------
 
 ## 2. Darkelf Standard Protection
 
-Shadow 7.0.7 introduces a locally compiled **Darkelf Standard
+Shadow 7.0.8 introduces a locally compiled **Darkelf Standard
 Protection** ruleset.
 
 Configured upstream filter subscriptions are combined into a unified
@@ -74,10 +102,17 @@ local ruleset before runtime. The compilation system:
 -   allows Shadow to process a unified subscription instead of
     independently evaluating numerous upstream lists.
 
-Resource-type evaluation was also refined. Rules intended specifically
-for scripts, XHR, images, subdocuments, pings, WebSockets, workers,
-media, and other resource types are constrained to their applicable
+Resource-type evaluation remains constrained so rules intended
+specifically for scripts, XHR, images, subdocuments, pings, WebSockets,
+workers, media, and other resource types apply only to their applicable
 request categories.
+
+Version 7.0.8 adds a fast declarative hostname layer ahead of the larger
+ABP/EasyList-style evaluation path. Known advertising, analytics,
+telemetry, and tracker hosts can therefore be rejected without requiring
+a scan of the full ruleset. Complex rules continue through indexed
+candidate selection and a fallback path when they cannot be safely
+indexed.
 
 This addresses an important compatibility problem: a rule intended for
 one resource type should not inadvertently become a generic rule
@@ -92,15 +127,22 @@ affecting unrelated resources.
 Shadow combines EasyList/EasyPrivacy-style network filtering with
 Darkelf-specific request processing and compatibility controls.
 
-Version 7.0.7 improves:
+Version 7.0.8 provides:
 
--   first-party versus third-party evaluation;
--   ABP resource-type handling;
+-   fast declarative hostname blocking for known tracker infrastructure;
+-   indexed candidate selection for ABP/EasyList-style rules;
+-   fallback evaluation for rules that cannot be safely indexed;
+-   resource-type-aware candidate evaluation;
+-   first-party versus third-party handling;
 -   compatibility-resource exceptions;
 -   tracking-parameter removal;
--   hyperlink ping protection;
--   diagnostic-resource handling; and
--   early termination of rule scanning after a definitive match.
+-   hyperlink ping protection; and
+-   diagnostic-resource handling.
+
+The declarative layer supplements rather than replaces Darkelf Standard
+Protection. Shadow continues to use its custom QtWebEngine request
+interception architecture; this mechanism is not Chromium extension
+`declarativeNetRequest`.
 
 ### Brave
 
@@ -123,14 +165,19 @@ The three projects use substantially different strategies.
 
 ### Darkelf Shadow
 
-Shadow 7.0.7 uses a three-state canvas model:
+Shadow 7.0.8 uses a three-state canvas model:
 
 **Blocked → Protected → Trusted**
 
-Canvas readback is blocked by default. Protected contexts can receive
-required functionality while Darkelf fingerprint defenses remain active.
-Trusted/native behavior can be temporarily provided when a supported
-human-verification system genuinely requires native browser behavior.
+Canvas readback is blocked by default. In **Blocked** mode, native Qt
+canvas readback is disabled. In **Protected** mode, the canvas API
+remains available while Darkelf's original randomized, domain-sensitive
+JavaScript protection modifies supported readback paths. **Trusted**
+mode permits native behavior for explicitly trusted compatibility cases.
+
+Trusted/native behavior can also be temporarily provided when a
+supported human-verification system genuinely requires native browser
+behavior.
 
 Critically, challenge-related trust can remain **session-only**. Closing
 Darkelf removes that temporary compatibility state.
@@ -159,9 +206,34 @@ The conceptual difference is substantial:
 
 ------------------------------------------------------------------------
 
-## 5. Human Verification and Authentication
+## 5. Network Performance Architecture in 7.0.8
 
-One of Shadow 7.0.7's largest compatibility improvements concerns
+The principal engineering change in 7.0.8 is the restructuring of the
+network-filtering hot path.
+
+Shadow now uses a layered decision path:
+
+1.  fast declarative tracker-host evaluation;
+2.  request and third-party classification;
+3.  indexed Darkelf Standard Protection candidates;
+4.  fallback evaluation for complex rules;
+5.  compatibility and authentication handling; and
+6.  MiniAI security analysis where applicable.
+
+Request-type mappings are cached rather than rebuilt for every request,
+and already parsed request host, first-party host, path, and resource
+information can be passed into filtering logic to reduce redundant URL
+processing.
+
+The purpose of these changes is to reduce synchronous work inside
+QtWebEngine's request interception path without weakening the fallback
+filtering model.
+
+------------------------------------------------------------------------
+
+## 6. Human Verification and Authentication
+
+One of Shadow 7.0.8's largest compatibility improvements concerns
 authentication and anti-bot systems.
 
 Compatibility work covers supported flows involving:
@@ -184,7 +256,7 @@ or session.
 
 ------------------------------------------------------------------------
 
-## 6. Ephemeral Browsing
+## 7. Ephemeral Browsing
 
 Ephemeral operation remains one of Shadow's strongest architectural
 distinctions.
@@ -211,7 +283,7 @@ overall workflow rather than one isolated privacy mechanism.
 
 ------------------------------------------------------------------------
 
-## 7. WebRTC and Network Exposure
+## 8. WebRTC and Network Exposure
 
 Shadow places strong restrictions on WebRTC as part of its privacy
 configuration.
@@ -227,13 +299,18 @@ mainstream Web application compatibility.
 
 ------------------------------------------------------------------------
 
-## 8. Compatibility Improvements in 7.0.7
+## 9. Compatibility and Performance Improvements in 7.0.8
 
 Earlier aggressive privacy behavior could cause legitimate website
-resources to be blocked. Shadow 7.0.7 substantially refines this area.
+resources to be blocked. Shadow 7.0.8 substantially refines this area.
 
 Improvements include:
 
+-   fast declarative handling of known tracker hosts;
+-   indexed network-rule candidate selection;
+-   fallback handling for complex non-indexable rules;
+-   reduced redundant URL and hostname parsing;
+-   cached QtWebEngine resource-type mapping;
 -   more accurate first/third-party handling;
 -   ABP resource-type constraints;
 -   reduced false-positive blocking;
@@ -241,20 +318,17 @@ Improvements include:
 -   session-only challenge permissions;
 -   targeted compatibility-resource exceptions;
 -   improved cross-origin resource handling;
--   reduced broken images and logos;
 -   improved script and XHR/fetch compatibility;
--   better handling of embedded resources;
--   reduced unnecessary synchronous processing of static assets;
--   faster network-rule termination;
--   reduced request-logging overhead; and
--   improved CAPTCHA/challenge reliability.
+-   reduced synchronous filtering work on resource-heavy pages;
+-   improved Microsoft / Outlook compatibility; and
+-   continued CAPTCHA/challenge reliability.
 
 The objective is not to weaken Darkelf's blocker. It is to make the
 blocker **more precise**.
 
 ------------------------------------------------------------------------
 
-## 9. Compatibility Philosophy
+## 10. Compatibility Philosophy
 
 Brave, LibreWolf and Shadow all face the same fundamental
 privacy-browser problem:
@@ -272,7 +346,7 @@ LibreWolf adopts hardened Firefox defaults, including RFP, strict
 tracking protection, WebGL restrictions and extensive state-cleanup
 behavior.
 
-Shadow 7.0.7 increasingly uses **adaptive, narrowly scoped
+Shadow 7.0.8 increasingly uses **adaptive, narrowly scoped
 compatibility**.
 
 The desired sequence is:
@@ -295,7 +369,7 @@ This is a central architectural direction for Darkelf Shadow.
 
 ------------------------------------------------------------------------
 
-## 10. Project Maturity
+## 11. Project Maturity
 
 Architecture and maturity should not be confused.
 
@@ -310,14 +384,14 @@ settings and patches.
 
 Darkelf Shadow remains a substantially smaller independent project.
 
-Shadow 7.0.7 should therefore be understood as an alternative privacy
+Shadow 7.0.8 should therefore be understood as an alternative privacy
 architecture under active development---not as evidence that a small
 project has surpassed the security engineering, auditing or testing
 infrastructure of established browsers.
 
 ------------------------------------------------------------------------
 
-## 11. Where Darkelf Shadow Is Different
+## 12. Where Darkelf Shadow Is Different
 
 Shadow's distinguishing characteristic is not simply that it blocks
 trackers. Brave blocks trackers. LibreWolf blocks trackers.
@@ -342,7 +416,21 @@ comparison browsers.
 
 ------------------------------------------------------------------------
 
-## 12. Summary
+## macOS Integration Note
+
+The 7.0.8 macOS build includes a Bluetooth privacy usage description for
+Bluetooth-enabled security keys or devices used through supported
+FIDO/WebAuthn flows. The declaration does not itself grant Bluetooth
+access; macOS remains responsible for requesting user permission when
+such access is requested.
+
+The macOS distribution continues to use Developer ID signing, Apple
+notarization, stapling, Gatekeeper validation, and SHA-256 release
+verification.
+
+------------------------------------------------------------------------
+
+## 13. Summary
 
 The three projects can be characterized without treating any one design
 as universally preferable.
@@ -360,23 +448,24 @@ RFP, uBlock Origin, strict tracking protection and hardened defaults.
 ### Darkelf Shadow
 
 An independent QtWebEngine/Chromium privacy browser emphasizing
-ephemeral operation, aggressive network filtering, canvas readback
-control, session-scoped trust and adaptive compatibility.
+ephemeral operation, layered declarative and ABP-style network
+filtering, canvas readback control, session-scoped trust and adaptive
+compatibility.
 
-Darkelf Shadow 7.0.7 moves the project toward a clearer design
+Darkelf Shadow 7.0.8 moves the project toward a clearer design
 principle:
 
 > **Strong privacy controls should be precise enough that users do not
 > have to disable them simply to use the Web.**
 
-The 7.0.7 release therefore represents more than an expansion of
-Darkelf's blocking rules. It is an architectural refinement of the
-relationship between **privacy, temporary trust, filtering precision,
-and website compatibility**.
+The 7.0.8 release therefore represents more than an expansion of
+Darkelf's blocking rules. It refines the relationship between **privacy,
+temporary trust, filtering precision, website compatibility, and
+request-path performance**.
 
 ------------------------------------------------------------------------
 
-**Darkelf Shadow CE 7.0.7**\
+**Darkelf Shadow CE 7.0.8**\
 **2026 Technical Privacy Browser Report**
 
 *Built for those who refuse to be watched.*
