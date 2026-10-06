@@ -1,4 +1,4 @@
-Darkelf Labs Privacy Policy
+### Darkelf Labs Privacy Policy
 
 Updated: October 2026
 
