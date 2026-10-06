@@ -1,67 +1,133 @@
-# 🧩 Darkelf — Privacy, Security & Research Ecosystem
+🧩 Darkelf Docs
 
-**Privacy by Design | Security Research | AI-Assisted Analysis | Post-Quantum Ready**
+Official documentation and research repository for the Darkelf ecosystem.
 
-Darkelf is an open ecosystem of privacy-focused browsers, security tools, OSINT utilities, and research projects built for cybersecurity professionals, researchers, developers, educators, and privacy-conscious users.
+Darkelf is an open-source ecosystem of privacy-focused browsers, security software, developer tools, and technical research created and maintained by Dr. Kevin Moore / Darkelf Labs.
 
-🌐 **Website:** https://darkelfbrowser.com  
+🌐 Website: darkelfbrowser.com
+🏢 Organization: Darkelf Labs
 
-**Read** [Darkelf Shadow Report](https://github.com/Darkelf-Labs/Darkelf-Docs/blob/main/Darkelf-Shadow-7.0.8-2026-Privacy-Browser-Technical-Report.md)
+⸻
 
----
+🌐 Darkelf Browsers
 
-# 🧭 Ecosystem Overview
+🍫 Darkelf Cocoa
 
-Darkelf is more than a browser—it is a unified ecosystem of privacy, cybersecurity, AI-assisted analysis, and open research.
+Native macOS privacy browser built around Python, PyObjC, Cocoa/AppKit, and WebKit.
 
-## 🌐 Privacy Browsers
+Development focuses on native macOS integration, privacy protections, browser security, anti-fingerprinting research, and usability.
 
-- 🔴 **Darkelf RedSec** — Enterprise-grade hardened browser
-- 🌑 **Darkelf Shadow CE** — Cross-platform privacy browser
-- 🍫 **Darkelf Cocoa** — Native macOS privacy browser
+🌑 Darkelf Shadow
 
----
+Cross-platform privacy browser built with Python, PySide6, Qt, and Qt WebEngine.
 
-## 🧰 Security & Research Tools
+Shadow explores ephemeral browsing, network filtering, anti-tracking, anti-fingerprinting protections, compatibility controls, and local privacy tooling.
 
-- **Darkelf CLI Tools** — Secure utilities and automation
-- **Darkelf OSINT AI** — AI-assisted intelligence workflows
-- **Darkelf CLI Research Suite** — Experimental security research
-- **Darkelf OSINT Toolkit Lite** — Lightweight reconnaissance utilities
-- **Darkelf Retro CLI Hub** — Legacy and archived tooling
+🔴 Darkelf RedSec
 
----
+Security-focused Darkelf browser research and development project.
 
-## 📚 Documentation & Research
+Refer to its current repository for implementation status, supported platforms, and release information.
 
-**Darkelf Docs** serves as the central knowledge base for the Darkelf ecosystem.
+⸻
 
-It provides:
+🧰 Security & Research
 
-- Installation and deployment guides
-- User manuals
-- Developer documentation
-- Software architecture
-- Privacy design documentation
-- Security research papers
-- Post-Quantum Cryptography research
-- OSINT methodologies
-- API and developer references
-- Release notes and changelogs
-- Project roadmaps
-- Best practices and tutorials
-- Technical whitepapers
-- Contribution guides
+Darkelf Labs also develops and documents projects involving:
 
-Darkelf Docs is designed to support both end users and developers by documenting the architecture, research, and evolution of every Darkelf project.
+* browser security;
+* privacy engineering;
+* anti-fingerprinting research;
+* network and tracker filtering;
+* local security analysis;
+* OSINT tooling;
+* post-quantum cryptography research;
+* developer security tools; and
+* experimental privacy technologies.
 
----
+⸻
 
-## 🧠 Core Technologies
+📚 About This Repository
 
-- MiniAI Sentinel
-- PQC Integrity Engine *(Research)*
-- Privacy Browser Architecture
-- Local AI Security Analysis
-- Ephemeral Session Design
-- Anti-Fingerprinting Research
+Darkelf Docs is the central documentation and research repository for the Darkelf ecosystem.
+
+Documentation may include:
+
+* architecture references;
+* security documentation;
+* privacy design;
+* developer guides;
+* technical reports;
+* research papers;
+* installation guides;
+* historical reports;
+* project policies; and
+* contribution information.
+
+⚠️ Current vs. Historical Documentation
+
+Darkelf evolves rapidly.
+
+Documents containing a specific version number describe that version unless explicitly identified as current documentation.
+
+Older technical reports are retained as part of the project’s development history and should not automatically be interpreted as descriptions of the latest release.
+
+Experimental and research documents may describe features or techniques that are not enabled in current production releases.
+
+For current software behavior, consult the applicable project’s source repository and latest release documentation.
+
+⸻
+
+🔐 Privacy & Security Philosophy
+
+Darkelf development emphasizes:
+
+* privacy by design;
+* minimal unnecessary persistence;
+* layered anti-tracking protections;
+* fingerprinting research and mitigation;
+* transparent security behavior;
+* local-first processing where practical;
+* compatibility without silently abandoning privacy protections; and
+* open technical documentation.
+
+No browser or privacy tool can guarantee complete anonymity or security.
+
+⸻
+
+📄 Project Documents
+
+Important repository documents include:
+
+* Attribution.md
+* SECURITY.md
+* PrivacyPolicy.md
+* Terms.md
+* Copyright.md
+* CONTRIBUTING.md
+* CODE_OF_CONDUCT.md
+* LICENSE
+
+Project-specific technical reports and research documents are maintained separately within this repository.
+
+⸻
+
+🤝 Contributing
+
+Technical corrections, documentation improvements, reproducible research, bug reports, and code contributions are welcome.
+
+See CONTRIBUTING.md and SECURITY.md before submitting contributions or vulnerability reports.
+
+⸻
+
+License
+
+This repository is governed by the license contained in LICENSE.
+
+Individual third-party materials retain their respective licenses and copyrights.
+
+⸻
+
+Copyright © 2024–2026 Dr. Kevin Moore / Darkelf Labs
+
+Privacy begins with thoughtful design.
