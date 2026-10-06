@@ -1,103 +1,120 @@
-# Contributing to Darkelf Browser
+Contributing to Darkelf Labs
 
-Thank you for your interest in contributing to Darkelf Browser! Your contributions help make this project better for everyone. Here are some guidelines to help you get started.
+Thank you for your interest in contributing to Darkelf.
 
-## Table of Contents
+Darkelf is an open-source ecosystem containing browser, privacy, security, developer-tooling, and documentation projects.
 
-1. [Code of Conduct](#code-of-conduct)
-2. [How to Contribute](#how-to-contribute)
-   - [Reporting Bugs](#reporting-bugs)
-   - [Suggesting Features](#suggesting-features)
-   - [Submitting Pull Requests](#submitting-pull-requests)
-3. [Development Setup](#development-setup)
-4. [Style Guides](#style-guides)
-   - [Git Commit Messages](#git-commit-messages)
-   - [Python Style Guide](#python-style-guide)
-5. [License](#license)
+Before Contributing
 
-## Code of Conduct
+Each Darkelf repository may have different:
 
-By participating in this project, you agree to abide by the [Code of Conduct](CODE_OF_CONDUCT.md). Please read it to understand the behavior we expect from contributors.
+* dependencies;
+* build requirements;
+* supported operating systems;
+* testing procedures;
+* security requirements; and
+* licenses.
 
-## How to Contribute
+Read the repository’s README, LICENSE, and project-specific documentation before making changes.
 
-### Reporting Bugs
+Issues
 
-If you find a bug in the project, please create an issue in the [issue tracker](https://github.com/Darkelf2024/Darkelf-Browser/issues) and include the following information:
+When reporting a bug, include:
 
-- A clear and descriptive title
-- Steps to reproduce the problem
-- Expected and actual behavior
-- Screenshots, if applicable
-- Any relevant logs or error messages
+* project and version;
+* operating system;
+* steps to reproduce;
+* expected behavior;
+* actual behavior;
+* relevant logs or screenshots; and
+* any troubleshooting already attempted.
 
-### Suggesting Features
+Search existing issues before creating a duplicate.
 
-We welcome feature suggestions! To suggest a feature, please create an issue in the [issue tracker](https://github.com/Darkelf2024/Darkelf-Browser/issues) and include the following information:
+Feature Requests
 
-- A clear and descriptive title
-- A detailed description of the proposed feature
-- Any examples or use cases
+Feature requests are welcome.
 
-### Submitting Pull Requests
+Describe:
 
-To submit a pull request, follow these steps:
+* the problem being solved;
+* the proposed behavior;
+* why it belongs in the project; and
+* any privacy, security, compatibility, or maintenance implications.
 
-1. Fork the repository and clone your fork.
-2. Create a new branch from `main` for your changes.
-3. Make your changes, ensuring that your code follows the project's [style guides](#style-guides).
-4. Commit your changes with a clear and descriptive commit message.
-5. Push your branch to your fork.
-6. Open a pull request in the main repository, describing your changes and referencing any related issues.
+Pull Requests
 
-Please make sure your pull request passes all tests and includes any necessary documentation updates.
+For code contributions:
 
-## Development Setup
+1. Fork the applicable repository.
+2. Create a focused branch.
+3. Make the smallest practical change required.
+4. Follow the existing project’s code style.
+5. Test the change.
+6. Update relevant documentation.
+7. Submit a pull request explaining what changed and why.
 
-To set up your development environment, follow these steps:
+Avoid unrelated refactoring in a focused bug-fix pull request.
 
-1. Clone the repository:
+Privacy and Security
 
-   ```bash
-   git clone https://github.com/Darkelf2024/Darkelf-Browser.git
-   cd Darkelf-Browser
-   ```
+Changes must not silently weaken Darkelf privacy or security protections.
 
-2. Install the required dependencies:
+Pull requests affecting areas such as:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+* network filtering;
+* Canvas or WebGL protections;
+* WebRTC;
+* browser storage;
+* permissions;
+* TLS or certificate handling;
+* internal browser pages;
+* cryptography;
+* dependency security; or
+* telemetry
 
-3. Run the application:
+should clearly document their privacy and security impact.
 
-   ```bash
-   python main.py
-   ```
+Dependencies
 
-4. Make sure all tests pass:
+Avoid adding dependencies without a clear technical reason.
 
-   ```bash
-   pytest
-   ```
+New dependencies should have:
 
-## Style Guides
+* a compatible license;
+* an active or reasonably maintained upstream project;
+* a justified purpose; and
+* no unnecessary telemetry or network behavior.
 
-### Git Commit Messages
+AI-Assisted Contributions
 
-- Use the present tense ("Add feature" not "Added feature").
-- Use the imperative mood ("Move cursor to..." not "Moves cursor to...").
-- Limit the first line to 72 characters or less.
-- Reference issues and pull requests liberally.
+AI-assisted development is permitted.
 
-### Python Style Guide
+Contributors remain responsible for understanding, reviewing, testing, and licensing the code they submit.
 
-Follow the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide for Python code. Use [Black](https://github.com/psf/black) to format your code:
+Do not submit generated code that you cannot explain or reasonably validate.
 
-```bash
-black .
-```
+Security Vulnerabilities
 
-## License
+Do not publish sensitive vulnerability details in a public issue.
 
-By contributing to Darkelf Browser, you agree that your contributions will be licensed under the [LGPL](LICENSE).
+Follow SECURITY.md for responsible disclosure.
+
+Documentation
+
+Documentation improvements, corrections, technical reports, testing results, and reproducible research are welcome.
+
+Clearly distinguish:
+
+* current supported behavior;
+* historical behavior;
+* experimental research; and
+* proposed features.
+
+Licensing
+
+By submitting a contribution, you agree that accepted contributions may be distributed under the license governing the applicable repository.
+
+⸻
+
+Thank you for helping improve Darkelf.
