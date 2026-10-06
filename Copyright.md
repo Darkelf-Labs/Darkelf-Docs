@@ -1,26 +1,45 @@
-# Copyright Notice and Licensing  
+Darkelf Labs — Copyright & Licensing
 
-This project is licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0). See the `LICENSE` file for details.  
+Darkelf Materials
 
-## Third-Party Libraries and Attributions  
-This project utilizes third-party libraries, each with its own licensing terms and conditions:  
+Copyright © 2024–2026 Dr. Kevin Moore / Darkelf Labs.
 
-- **Python Standard Library**: PSFL, Copyright © 2001-2024 Python Software Foundation.  
-- **PySide6**: LGPL v3, Copyright © The Qt Company Ltd.  
-- **PySide6 WebEngine**: LGPL v3, Copyright © The Qt Company Ltd.  
-- **cryptography (Hazmat primitives)**: Apache 2.0 or BSD, Copyright © The Python Cryptographic Authority.  
-- **Adblockparser**: MIT License.  
-- **Stem (Tor Controller Library)**: GNU General Public License v3.0.  
-- **Requests**: Apache 2.0 License.  
-- **dnspython**: ISC License.  
-- **base64, urllib, sys, os, gc, logging, json, re, socket, shutil, time, random**: PSFL, Copyright © 2001-2024 Python Software Foundation.  
+Darkelf Labs develops and maintains original software, documentation, artwork, interfaces, research materials, and related project resources.
 
-## License Links  
-- [Python Software Foundation License](https://docs.python.org/3/license.html)  
-- [Lesser General Public License (LGPL-3.0)](https://www.gnu.org/licenses/lgpl-3.0.html)  
-- [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)  
-- [MIT License](https://opensource.org/licenses/MIT)  
-- [ISC License](https://opensource.org/licenses/ISC)  
-- [GNU General Public License (GPL-3.0)](https://www.gnu.org/licenses/gpl-3.0.html)  
+Open-Source Software
 
-Copyright © 2024 Dr. Kevin Moore.
+Darkelf software repositories are governed by the license included with each individual repository.
+
+Always refer to the applicable repository’s LICENSE file for authoritative licensing terms.
+
+A license used by one Darkelf project does not automatically apply to every other Darkelf Labs project.
+
+Third-Party Components
+
+Darkelf projects may incorporate or depend upon third-party open-source software, browser engines, frameworks, libraries, filter lists, operating-system technologies, and other resources.
+
+Third-party components retain their original:
+
+* copyright;
+* license;
+* attribution requirements; and
+* trademark rights.
+
+Distribution with or use by Darkelf does not transfer ownership of those components to Darkelf Labs.
+
+See Attribution.md and project-specific notices for additional information.
+
+Darkelf Branding
+
+Darkelf names, logos, artwork, and project branding are separate from the open-source licenses governing source code unless expressly stated otherwise.
+
+Third-party trademarks referenced in Darkelf documentation remain the property of their respective owners.
+
+Contributions
+
+Unless a repository specifies otherwise, contributions accepted into a Darkelf project are distributed under the license governing that project.
+
+⸻
+
+Dr. Kevin Moore / Darkelf Labs
+2024–2026
