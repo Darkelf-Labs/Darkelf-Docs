@@ -1,4 +1,4 @@
-# Darkelf Labs — Disclaimer
+### Darkelf Labs — Disclaimer
 
 Updated: October 2026
 
